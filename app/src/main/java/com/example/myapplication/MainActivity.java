@@ -16,7 +16,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnKayit.findViewById(R.id.kayit);
+        Button btnKayit = findViewById(R.id.kayit);
+        btnKayit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Intent intent =new Intent(MainActivity.this, kayitActvity.class);
+              startActivity(intent);
+            }
+        });
 
 
     }
