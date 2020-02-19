@@ -96,7 +96,7 @@
            android:layout_height="wrap_content"
 
            android:layout_gravity="bottom"
-           android:background="#FF8328"
+           android:background="@color/turuncu"
            android:padding="13dp"
            android:text="Kayit OL"
            android:textSize="30dp" />
