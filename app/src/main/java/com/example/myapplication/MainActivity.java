@@ -45,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String s_ad=kad.getText().toString();
                 String s_sif=sif.getText().toString();
-                if (!TextUtils.isEmpty(s_ad)||!TextUtils.isEmpty(s_sif)){
+                if (!TextUtils.isEmpty(s_ad)&&!TextUtils.isEmpty(s_sif)){
                     girisyap(s_ad,s_sif);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Kullanici adi veya sifre eksik",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -60,6 +63,10 @@ mAuth.signInWithEmailAndPassword(s_ad,s_sif).addOnCompleteListener(new OnComplet
         if (task.isSuccessful()){
             Intent intent =new Intent(MainActivity.this,anasayfa.class);
             startActivity(intent);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"Kullanici adi veya sifre yanlis",Toast.LENGTH_SHORT).show();
         }
     }
 });

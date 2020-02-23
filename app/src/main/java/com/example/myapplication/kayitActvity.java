@@ -62,9 +62,9 @@ public class kayitActvity extends AppCompatActivity {
                 String eposta=kayitEposta.getText().toString();
                 String sifre=kayitSifre.getText().toString();
                 String stekrar=kayitSifreTekrar.getText().toString();
-                if (!TextUtils.isEmpty(ad) || !TextUtils.isEmpty(sad)|| !TextUtils.isEmpty(tel)|| !TextUtils.isEmpty(yakin)
-                   ||!TextUtils.isEmpty(yakintel)|| !TextUtils.isEmpty(cin)||!TextUtils.isEmpty(yas)||!TextUtils.isEmpty(eposta)
-                   ||!TextUtils.isEmpty(sifre)||!TextUtils.isEmpty(stekrar)){
+                if (!TextUtils.isEmpty(ad) && !TextUtils.isEmpty(sad)&& !TextUtils.isEmpty(tel)&& !TextUtils.isEmpty(yakin)
+                   &&!TextUtils.isEmpty(yakintel)&& !TextUtils.isEmpty(cin)&&!TextUtils.isEmpty(yas)&&!TextUtils.isEmpty(eposta)
+                   &&!TextUtils.isEmpty(sifre)&&!TextUtils.isEmpty(stekrar)){
                         if (TextUtils.equals(sifre,stekrar)){
                             progressDialog1.setTitle("Kaydediliyor");
                             progressDialog1.setMessage("bekleyiniz");
@@ -73,6 +73,10 @@ public class kayitActvity extends AppCompatActivity {
                             register_user(ad,sad,tel,yakin,yakintel,cin,yas,eposta,sifre);
 
                         }
+
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Butun degerleri girmeniz gerekiyor",Toast.LENGTH_SHORT).show();
                 }
 
             }
